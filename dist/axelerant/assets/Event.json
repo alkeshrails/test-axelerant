@@ -1,0 +1,50 @@
+[
+    {
+        "title":"Understanding color theory:The Color Wheel and Find",
+        "date":"21 Sep,2020",
+        "tickets":0,
+        "image":"../assets/event-1.png"
+    },
+    {
+        "title":"RGD Design Thinckers",
+        "date":"21 Sep,2020",
+        "tickets":11,
+        "image":"../assets/event-2.png"
+    },
+    {
+        "title":"What Design Can Do",
+        "date":"21 Sep,2020",
+        "tickets":206,
+        "image":"../assets/event-3.png"
+    },
+    {
+        "title":"perth UX Camp",
+        "date":"21 Sep,2020",
+        "tickets":47,
+        "image":"../assets/event-4.png"
+    },
+    {
+        "title":"Sofia Design",
+        "date":"21 Sep,2020",
+        "tickets":66,
+        "image":"../assets/event-5.png"
+    },
+    {
+        "title":"Design indaba Conference",
+        "date":"21 Sep,2020",
+        "tickets":84,
+        "image":"../assets/event-6.png"
+    },
+    {
+        "title":"TYPO Berlin",
+        "date":"21 Sep,2020",
+        "tickets":4,
+        "image":"../assets/event-7.png"
+    },
+    {
+        "title":"AIGA Design Confrence",
+        "date":"21 Sep,2020",
+        "tickets":16,
+        "image":"../assets/event-8.png"
+    }
+]
