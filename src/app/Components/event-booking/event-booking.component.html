@@ -1,0 +1,82 @@
+<div class="form_booking px-space py-space" *ngIf="!isbuttonDisabled">
+  <div class="venue">
+    <h3>{{state.title? state.title : "N/A"}}</h3>
+    <div class="overviewcard__icon">21 Sep 2020</div>
+    <div class="overviewcard__info">Tickets Available: <span>{{state.count}}</span></div>
+  </div>
+  <form [formGroup]="bookingForm" class="py-space form_start">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" formControlName="name" placeholder="Your name">
+      <div *ngIf="f.name.errors &&
+      (submitted || !f.name.pristine)">
+        <small class="invalid-feedback">
+          Name is required.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="lname" formControlName="email" placeholder="Your email">
+      <div *ngIf="f.email.errors &&
+      (submitted || !f.email.pristine)">
+        <small class="invalid-feedback">
+          Email is required.
+        </small>
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label for="message">Number of seats</label>
+      <input type="text" id="lname" formControlName="noofseat" placeholder="Number of seats">
+      <div *ngIf="f.noofseat.errors &&
+      (submitted || !f.noofseat.pristine)">
+        <small class="invalid-feedback">
+          Number of seat is required.
+        </small>
+      </div>
+    </div> -->
+    <div class="form-group">
+      <label for="message">Number of seats</label>
+      <select formControlName="noofseat">
+        <option [ngValue]="null" disabled>Choose your profile</option>
+        <option *ngFor="let seat of seatsOption" [ngValue]="seat.id">
+         {{ seat.name }}
+        </option>
+      </select> 
+      <div *ngIf="f.noofseat.errors &&
+      (submitted || !f.noofseat.pristine)">
+        <small class="invalid-feedback">
+          Number of seat is required.
+        </small>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="message">Attendees</label>
+      <div formArrayName="attendees">
+        <div *ngFor="let attendee of getAttendees().controls || f.noofseat.value; let attendeeIndex=index">
+          <div [formGroupName]="attendeeIndex" class="add_attendees">
+            {{attendeeIndex+1}}
+            <input type="text" formControlName="userName" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <a (click)="addAttendees()">
+      + Add An Attendees
+    </a>
+  </form>
+  <button type="button" (click)="bookingFunction()" class="bg-orrange" [disabled]="isbuttonDisabled">Book Ticket</button> 
+  <button type="button" (click)="cancel()" class="bg-orrange-outline" [disabled]="isbuttonDisabled">cancel</button>
+</div>
+<!-- ------------------------------- New Section Start from here ------------------------------------ -->
+<div class="form_booking px-space py-space" *ngIf="isbuttonDisabled">
+  <div class="venue">
+    <div class="overviewcard__info">You have booked <span>{{f.noofseat.value}}</span> tickets</div>
+    <div class="header-box">
+      <h3>{{state.title? state.title : "N/A"}}</h3>
+      <div class="overviewcard__icon">21 Sep 2020</div>
+    </div>
+  </div>
+  <button type="button" class="bg-orrange">Make Payment</button> 
+  <button type="button" (click)="cancel()" class="bg-orrange-outline">cancel</button>
+</div>

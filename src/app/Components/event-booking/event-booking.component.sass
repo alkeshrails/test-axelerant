@@ -1,0 +1,82 @@
+
+.form_booking
+	max-width:550px
+	margin:30px auto
+	background:#fff
+	padding:30px
+	border-radius: 4px
+	font-size:18px
+	@media(max-width:425px)
+		width:75%
+	a
+		color:#fc732f
+		font-weight:700
+		display: block
+		text-align: right
+		cursor: pointer
+	small
+		color: red
+	.venue
+		text-align: center
+		font-size:18px
+		padding-bottom: 15px
+		h3
+			font-size: 24px
+			margin-top:0
+			margin-bottom: 10px
+		.overviewcard__info
+			span
+				color:#fc732f
+				font-weight:700
+	.form_start
+		border-top: 2px solid #ccc
+		border-bottom: 2px solid #ccc
+		.form-group
+			margin-bottom:15px
+			input[type=text], select 
+				width: 100% 
+				padding: 15px 
+				margin: 6px 0 0px 
+				display: inline-block 
+				border: 1px solid #ccc 
+				border-radius: 4px 
+				box-sizing: border-box 
+				font-size:17px
+			input[type=submit] 
+				width: 100% 
+				background-color: #4CAF50 
+				color: white 
+				padding: 14px 20px 
+				margin: 8px 0 
+				border: none 
+				border-radius: 4px 
+				cursor: pointer 
+			input[type=submit]:hover 
+				background-color: #45a049 
+			.add_attendees
+				display: flex
+				justify-content: space-between
+				align-items: center
+				input
+					width:80%
+	.bg-orrange,.bg-orrange-outline
+		border:2px solid #fc732f
+		border-radius: 4px 
+		font-weight:700
+		width:48%
+		padding: 18px
+		margin: 20px 0
+	.bg-orrange + .bg-orrange-outline
+		margin-left:4%
+	.bg-orrange
+		background:#fc732f
+		color:#fff
+	.bg-orrange-outline
+		background-color: transparent
+		color:#fc732f
+	.bg-orrange-outline
+		background-color: transparent
+		color:#fc732f
+	.bg-orrange[disabled],.bg-orrange-outline[disabled]
+		opacity: 0.6
+

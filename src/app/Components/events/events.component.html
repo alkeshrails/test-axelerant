@@ -1,0 +1,42 @@
+<div class="search-bar px-space">
+  <div class="form-control">
+    <input
+      type="text"
+      name="searchText"
+      class="input-field"
+      placeholder="Search By Event Title..."
+      [(ngModel)]="searchText"
+      (input)="search()"
+    />
+    <button type="button" class="submit" (click)="search()">
+      <img src="../../../assets/search.png" />
+    </button>
+  </div>
+</div>
+<div class="main px-space">
+    <h2>Events <span>({{filteredEventData.length}})</span></h2>
+    <div class="main-overview">
+      <div *ngFor="let data of filteredEventData">
+        <div class="overviewcard">
+          <img
+            src="{{data.image}}"
+            alt="bg-img" class="img_fluid"
+          />
+          <div class="event-detail">
+            <div>
+              <h3>{{data.title}}</h3>
+              <div class="venue">
+                <div class="overviewcard__icon">{{data.date}}</div>
+                <div class="overviewcard__info">Tickets Available: {{data.tickets}}</div>
+              </div>
+            </div>
+            <button *ngIf="data.tickets <= 0" class="btn-event"><img src="../../../assets/sold-out.png"><span>Sold Out</span></button>
+            <button (click)="OpenBookingPage(data.tickets,data.title)" *ngIf="data.tickets > 0" class="booking-event"><img src="../../../assets/book.png"><span>Book Event</span></button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="center" *ngIf="filteredEventData.length == 0">
+  <h1>No results found!</h1>
+</div>

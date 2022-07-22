@@ -1,0 +1,108 @@
+*
+  box-sizing: border-box
+
+body
+  margin: 0px
+  font-family: 'segoe ui'
+
+.nav
+  padding:20px 100px
+  width: 100%
+  background-color: #5c524d
+  position: relative
+
+  >
+    .nav-header
+      display: inline
+
+      > .nav-title
+        display: inline-block
+        > .navLogo
+                width:210px
+                @media(max-width:375px)
+                    width: 165px
+
+    .nav-btn
+      display: none
+
+    .nav-links
+      display: inline
+      float: right
+      font-size: 18px
+      color:#d1cfce
+      text-shadow: 2px 2px 7px #00000063
+      font-weight: 500
+
+      > a
+        display: inline-block
+        padding: 6px 0px 20px 0px
+        text-decoration: none
+        margin: 0 28px
+        color: #efefef
+        &.active
+         border-bottom:8px solid #86eaae
+
+        &:hover
+          background-color: rgba(0, 0, 0, 0.3)
+
+    #nav-check
+      display: none
+@media(max-width:960px)
+  .nav
+    padding: 20px 40px
+@media(max-width:425px)
+  .nav
+    padding: 20px 15px
+@media (max-width:768px)
+  .nav
+    > .nav-btn
+      display: inline-block
+      position: absolute
+      right: 20px
+      top: 13px
+
+      > label
+        display: inline-block
+        width: 50px
+        height: 50px
+        padding: 13px
+
+        &:hover
+          background-color: rgba(0, 0, 0, 0.3)
+
+    #nav-check:checked ~ .nav-btn > label
+      background-color: rgba(0, 0, 0, 0.3)
+
+    >
+      .nav-btn > label > span
+        display: block
+        width: 25px
+        height: 10px
+        border-top: 2px solid #eee
+
+      .nav-links
+        position: absolute
+        display: block
+        width: 100%
+        background-color: #333
+        height: 0px
+        transition: all 0.3s ease-in
+        overflow-y: hidden
+        top: 77px
+        left: 0px
+        z-index:9
+        padding: 0 40px
+
+        > a
+          display: block
+          width: 100%
+          margin: 0
+          padding: 20px 0
+
+      #nav-check
+        &:not(:checked) ~ .nav-links
+          height: 0px
+
+        &:checked ~ .nav-links
+          height: calc(100vh - 50px)
+          overflow-y: auto
